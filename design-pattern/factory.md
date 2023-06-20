@@ -8,16 +8,18 @@ Dessa forma, poderíamos ter uma interface que iria definir a nossa fábrica abs
 
 ```go
 type ThemeFactory interface {
-    CreateBackground() Background
+    CreateBackground() IBackground
     CreateSticker() Sticker
 }
 
-type Background struct {
-    color string
+type IBackground interface {
+    CreateBackground(color string)
+    GetBackground()
 }
 
-type Sticker struct {
-    stickerImage string
+type ISticker interface {
+    CreateStricker(stickerFile string)
+    GetSticker()
 }
 ```
 
